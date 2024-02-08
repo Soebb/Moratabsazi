@@ -45,7 +45,7 @@ async def start(bot, update):
    
 @Bot.on_message(filters.private & filters.audio)
 async def tag(bot, m):
-    mes = await m.reply("`Downloading...`", parse_mode='md')
+    mes = await m.reply("`Downloading...`")
     await m.download(f"temp/{m.audio.file_name}.mp3")
     music = load_file(f"temp/{m.audio.file_name}.mp3")
 
